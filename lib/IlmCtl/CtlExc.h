@@ -80,7 +80,7 @@ class CtlExc : public Iex::BaseExc {
     class name : public base                                    \
     {                                                           \
       public:                                                   \
-        name (const char* text=0, ...) throw() {                \
+        name (const char* text=0, ...) throw(): base (0) {      \
             va_list ap;                                         \
             va_start(ap, text);                                 \
             _explain(text, ap);                                 \
