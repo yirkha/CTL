@@ -68,6 +68,7 @@
 #include <IlmThreadPool.h>
 #include <IlmThreadMutex.h>
 #include <Iex.h>
+#include <algorithm>
 
 using namespace std;
 using namespace Iex;

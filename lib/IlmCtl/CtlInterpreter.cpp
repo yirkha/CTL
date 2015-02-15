@@ -78,6 +78,9 @@
     #include <io.h>
     #include <stdio.h>
     #include <stdlib.h>
+    #include <time.h>
+    #define snprintf _snprintf
+    #define lrand48  rand
 #else
     #include <unistd.h>
 #endif

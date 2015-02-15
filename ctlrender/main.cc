@@ -56,7 +56,15 @@
 #include <exception>
 #include <list>
 #include <sys/stat.h>
-#include <sys/param.h>
+#ifndef _WIN32
+    #include <sys/param.h>
+#else
+    #include <io.h>
+    #define F_OK 00
+    #define S_ISREG(_mode) (_mode & _S_IFREG)
+    #define S_ISDIR(_mode) (_mode & _S_IFDIR)
+    #define MAXPATHLEN 260
+#endif
 #include <errno.h>
 #include "transform.hh"
 #include <Iex.h>

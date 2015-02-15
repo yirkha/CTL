@@ -55,6 +55,9 @@
 
 #include "dpx_rw.hh"
 #include <string.h>
+#ifdef _WIN32
+    #define strncasecmp _strnicmp
+#endif
 
 namespace ctl {
 namespace dpxi {

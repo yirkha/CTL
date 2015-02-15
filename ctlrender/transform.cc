@@ -67,6 +67,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#ifdef _WIN32
+    #define strcasecmp _stricmp
+    #define snprintf _snprintf
+#endif
 
 class CTLResult;
 typedef Ctl::RcPtr<CTLResult> CTLResultPtr;

@@ -55,7 +55,9 @@
 #include <CtlExc.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include <alloca.h>
+#ifndef _WIN32
+    #include <alloca.h>
+#endif
 #include <string.h>
 
 namespace Ctl {
