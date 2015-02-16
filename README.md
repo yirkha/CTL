@@ -1,3 +1,22 @@
+## Branch windows-msvc ##
+
+I've made a few changes to the CMake build scripts and source code files in order
+to be able to build CTL on Windows with MS Visual Studio 2013 and the latest
+IlmBase and OpenEXR. I have forked the repository from @mikaelsundell who has
+already done the latter.
+
+An example (assuming `OpenEXR\Debug` contains the `bin`, `include` and `lib`
+directories with the output of a successful OpenEXR build):
+```
+>git -b windows-msvc clone https://github.com/yirkha/CTL.git
+>mkdir CTL-build
+>cd CTL-build
+>cmake -DENABLE_SHARED=FALSE -DCMAKE_INSTALL_PREFIX=install -DIlmBase_ROOT=%CD%\..\OpenEXR -DOpenEXR_ROOT=%CD%\..\OpenEXR -DCMAKE_CXX_FLAGS="/DOPENEXR_DLL /EHsc" ..\CTL
+>start CTL.sln
+```
+
+----
+
 # The Color Transformation Language #
  
 The Color Transformation Language, or CTL, is a programming language for digital
